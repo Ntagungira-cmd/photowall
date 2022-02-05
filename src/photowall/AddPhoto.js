@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 class AddPhoto extends Component {
   constructor() {
     super();
@@ -18,6 +19,7 @@ class AddPhoto extends Component {
       this.props.onAddphoto(post);
     }
   }
+ 
   render() {
     return (
       <div>

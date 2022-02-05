@@ -2,10 +2,11 @@ import React from "react";
 import Photos from "./photos";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import {FaPlus} from "react-icons/fa"
+import {FaPlus} from "react-icons/fa";
 
-// functional components
 function Photowall(props) {
+  const posts=props.posts.posts;
+  console.log(props)
   return (
     <div>
       <Link className="addIcon" to="/addPhoto"><FaPlus/></Link>
@@ -15,12 +16,12 @@ function Photowall(props) {
 
         {/* In the photos instance we create for each element in the post array we pass
         it the onRemove method as a prop (onRemovePhoto)  */}
-        {props.posts
+        {posts
           .sort(function (a, b) {
             return b.id - a.id;
           })
           .map((post, index) => (
-            <Photos key={index} posts={post} onRemovePhoto={props.onRemove} />
+            <Photos key={index} posts={post}/>
           ))}
       </div>
     </div>
