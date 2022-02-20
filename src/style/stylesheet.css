@@ -93,3 +93,7 @@ margin:  -2rem 0rem 0rem -2rem;
 .formbutton:hover{
     background-color: rgba(100, 100, 100, 0.815);
 }
+h2{
+font-size: 50px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

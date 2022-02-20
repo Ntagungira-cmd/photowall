@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { addPhoto,removePhoto } from "./actions";
-import Main from "../photowall/main"
+import { addPhoto, removePhoto } from "./actions";
+import Main from "../photowall/main";
 
 const mapStateToProps = (state) => {
   return {
@@ -10,11 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addPhoto: () => dispatch(addPhoto),
-    removePhoto: () => dispatch(removePhoto),
+    addPhoto: (postadded) => dispatch(addPhoto(postadded)),
+    removePhoto: (post) => dispatch(removePhoto(post)),
   };
 };
-export const Container = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Main);
+export const Container = connect(mapStateToProps, mapDispatchToProps)(Main);
