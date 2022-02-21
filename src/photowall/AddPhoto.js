@@ -4,23 +4,27 @@ class AddPhoto extends Component {
   constructor() {
     super();
     this.handlesubmit = this.handlesubmit.bind(this);
+    
   }
 
   handlesubmit(event) {
     event.preventDefault();
     const imageLink = event.target.elements.link.value;
     const description = event.target.elements.description.value;
-    const post = {
+  
+    const postadded = {
       id: Number(new Date()),
       description: description,
       imageLink: imageLink
     };
     if (imageLink && description) {
-      this.props.onAddphoto(post);
+    this.props.prop.addPhoto(postadded);
     }
+    
   }
  
   render() {
+    console.log(this.props);
     return (
       <div>
         <h1>Photowall</h1>

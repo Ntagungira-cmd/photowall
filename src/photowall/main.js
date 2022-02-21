@@ -9,7 +9,7 @@ class Main extends Component {
   }
 
   render() {
-    //console.log(this.props);
+    console.log(this.props);
     return (
       <Routes>
         <Route
@@ -21,7 +21,10 @@ class Main extends Component {
             </div>
           }
         />
-        <Route path="/addPhoto" element={<AddPhoto />} />
+        <Route
+          path="/addPhoto"
+          element={<AddPhoto prop={this.props}/>}
+        />
       </Routes>
     );
   }

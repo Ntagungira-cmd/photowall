@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function Photos(props) {
   const post = props.posts;
   const removePhoto = props.removePhoto;
-  console.log(removePhoto);
+  // console.log(removePhoto);
   return (
     <figure className="figure">
       <img className="photo" src={post.imageLink} alt={post.description} />
