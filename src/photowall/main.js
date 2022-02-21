@@ -4,9 +4,9 @@ import Photowall from "./photowall";
 import AddPhoto from "./AddPhoto";
 import { Route, Routes } from "react-router-dom";
 class Main extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   render() {
     console.log(this.props);
