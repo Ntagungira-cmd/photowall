@@ -1,36 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
+import {useNavigate} from 'react-router-dom'
+  
+  function AddPhoto(props) {
+    let navigate=useNavigate();
 
-
-class AddPhoto extends Component {
-  constructor() {
-    super();
-    this.handlesubmit = this.handlesubmit.bind(this);
-    this.redirect=this.redirect.bind(this);
-  }
-
-
-  handlesubmit(event) {
-    event.preventDefault();
-    const imageLink = event.target.elements.link.value;
-    const description = event.target.elements.description.value;
-
-    const postadded = {
-      id: Number(new Date()),
-      description: description,
-      imageLink: imageLink,
-    };
-    if (imageLink && description) {
-      this.props.prop.addPhoto(postadded);
+    const handlesubmit=(event) =>{
+      event.preventDefault();
+      const imageLink = event.target.elements.link.value;
+      const description = event.target.elements.description.value;
+  
+      const postadded = {
+        id: Number(new Date()),
+        description: description,
+        imageLink: imageLink,
+      };
+      if (imageLink && description) {
+        props.prop.addPhoto(postadded);
+        return navigate("/");
+      }
     }
-  }
-
-  render() {
-    console.log(this.props);
+    console.log(props);
     return (
       <div>
         <h1>Photowall</h1>
         <div className="form">
-          <form onSubmit={this.handlesubmit}>
+          <form onSubmit={handlesubmit}>
             <input
               className="input"
               type="text"
@@ -49,5 +43,5 @@ class AddPhoto extends Component {
       </div>
     );
   }
-}
+
 export default AddPhoto;
