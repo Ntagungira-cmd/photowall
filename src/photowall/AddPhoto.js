@@ -1,28 +1,29 @@
 import React, { Component } from "react";
 
+
 class AddPhoto extends Component {
   constructor() {
     super();
     this.handlesubmit = this.handlesubmit.bind(this);
-    
+    this.redirect=this.redirect.bind(this);
   }
+
 
   handlesubmit(event) {
     event.preventDefault();
     const imageLink = event.target.elements.link.value;
     const description = event.target.elements.description.value;
-  
+
     const postadded = {
       id: Number(new Date()),
       description: description,
-      imageLink: imageLink
+      imageLink: imageLink,
     };
     if (imageLink && description) {
-    this.props.prop.addPhoto(postadded);
+      this.props.prop.addPhoto(postadded);
     }
-    
   }
- 
+
   render() {
     console.log(this.props);
     return (

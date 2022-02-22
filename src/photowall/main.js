@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Title from "./title";
 import Photowall from "./photowall";
 import AddPhoto from "./AddPhoto";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 class Main extends Component {
   // constructor() {
   //   super();
